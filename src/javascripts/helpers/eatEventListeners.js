@@ -3,20 +3,28 @@ import util from './util';
 const eatButtons = document.getElementsByClassName('eatButtons');
 let full = 100;
 
+const increaseFull = () => {
+  full += 10;
+  if (full > 100) {
+    full = 100;
+  }
+  util.printToDom('fullScore', full);
+};
+
+const decreaseFull = () => {
+  full -= 3;
+  if (full < 0) {
+    full = 0;
+  }
+  util.printToDom('fullScore', full);
+};
+
 const eatButtonFunction = (e) => {
   const eatButtonId = e.target.id;
   if (eatButtonId === 'healthyFoodButton') {
-    full += 10;
-    if (full > 100) {
-      full = 100;
-    }
-    util.printToDom('fullScore', full);
+    increaseFull();
   } else {
-    full -= 3;
-    if (full < 0) {
-      full = 0;
-    }
-    util.printToDom('fullScore', full);
+    decreaseFull();
   }
 };
 
@@ -26,4 +34,4 @@ const attachEatEvents = () => {
   }
 };
 
-export default { attachEatEvents };
+export default { attachEatEvents, increaseFull, decreaseFull };

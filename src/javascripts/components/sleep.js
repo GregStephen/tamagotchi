@@ -1,5 +1,6 @@
 import util from '../helpers/util';
 import buttons from '../helpers/sleepEventListeners';
+import './sleep.scss';
 
 const domStringBuilder = () => {
   let domString = '';

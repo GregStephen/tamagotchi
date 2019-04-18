@@ -1,5 +1,6 @@
 import util from '../helpers/util';
 import buttons from '../helpers/funEventListeners';
+import './play.scss';
 
 const domStringBuilder = () => {
   let domString = '';
