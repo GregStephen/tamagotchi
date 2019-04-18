@@ -1,5 +1,4 @@
 import util from '../helpers/util';
-import buttons from '../helpers/fightEventListeners';
 import './fight.scss';
 
 const domStringBuilder = () => {
@@ -12,7 +11,46 @@ const domStringBuilder = () => {
   domString += '<button type="button" class="fightButtons" id="killThem">KILL THE ENEMY</button>';
   domString += '</div>';
   util.printToDom('fight', domString);
-  buttons.attachFightEvents();
 };
 
-export default { domStringBuilder };
+let strength = 100;
+
+const increaseStrengthALittle = () => {
+  strength += 1;
+  if (strength > 100) {
+    strength = 100;
+  }
+  util.printToDom('strengthScore', strength);
+};
+
+const increaseStrengthALot = () => {
+  strength += 20;
+  if (strength > 100) {
+    strength = 100;
+  }
+  util.printToDom('strengthScore', strength);
+};
+
+const decreaseStrengthALittle = () => {
+  strength -= 10;
+  if (strength < 0) {
+    strength = 0;
+  }
+  util.printToDom('strengthScore', strength);
+};
+
+const decreaseStrengthALot = () => {
+  strength -= 20;
+  if (strength < 0) {
+    strength = 0;
+  }
+  util.printToDom('strengthScore', strength);
+};
+
+export default {
+  domStringBuilder,
+  increaseStrengthALittle,
+  increaseStrengthALot,
+  decreaseStrengthALittle,
+  decreaseStrengthALot,
+};

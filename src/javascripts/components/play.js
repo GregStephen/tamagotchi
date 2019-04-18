@@ -1,5 +1,4 @@
 import util from '../helpers/util';
-import buttons from '../helpers/funEventListeners';
 import './play.scss';
 
 const domStringBuilder = () => {
@@ -12,7 +11,48 @@ const domStringBuilder = () => {
   domString += '<button type="button" class="playButtons" id="kindaFun">High Five</button>';
   domString += '</div>';
   util.printToDom('play', domString);
-  buttons.attachFunEvents();
 };
 
-export default { domStringBuilder };
+
+let fun = 50;
+
+const increaseFunALittle = () => {
+  fun += 2;
+  if (fun > 100) {
+    fun = 100;
+  }
+  util.printToDom('funScore', fun);
+};
+
+const increaseFunALot = () => {
+  fun += 50;
+  if (fun > 100) {
+    fun = 100;
+  }
+  util.printToDom('funScore', fun);
+};
+
+const decreaseFunALittle = () => {
+  fun -= 5;
+  if (fun < 0) {
+    fun = 0;
+  }
+  util.printToDom('funScore', fun);
+};
+
+const decreaseFunALot = () => {
+  fun -= 25;
+  if (fun < 0) {
+    fun = 0;
+  }
+  util.printToDom('funScore', fun);
+};
+
+
+export default {
+  domStringBuilder,
+  increaseFunALittle,
+  increaseFunALot,
+  decreaseFunALittle,
+  decreaseFunALot,
+};
