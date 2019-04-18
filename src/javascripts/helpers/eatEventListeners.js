@@ -1,22 +1,22 @@
 import util from './util';
 
 const eatButtons = document.getElementsByClassName('eatButtons');
-let score = 75;
+let full = 100;
 
 const eatButtonFunction = (e) => {
   const eatButtonId = e.target.id;
   if (eatButtonId === 'healthyFoodButton') {
-    score += 10;
-    if (score > 100) {
-      score = 100;
+    full += 10;
+    if (full > 100) {
+      full = 100;
     }
-    util.printToDom('fullScore', score);
+    util.printToDom('fullScore', full);
   } else {
-    score -= 3;
-    if (score < 0) {
-      score = 0;
+    full -= 3;
+    if (full < 0) {
+      full = 0;
     }
-    util.printToDom('fullScore', score);
+    util.printToDom('fullScore', full);
   }
 };
 

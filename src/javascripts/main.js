@@ -1,10 +1,10 @@
 import '../styles/main.scss';
-import eat from './components/eat';
+import createPage from './components/createPage';
 
 console.error('hi');
 
 const init = () => {
-  eat.domStringBuilder();
+  createPage.createPage();
 };
 
 init();
