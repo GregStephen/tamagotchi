@@ -1,6 +1,8 @@
 import util from './util';
+import full from './eatEventListeners';
+import strength from './fightEventListeners';
+import energy from './sleepEventListeners';
 
-const playButtons = document.getElementsByClassName('playButtons');
 let fun = 50;
 
 const increaseFunALittle = () => {
@@ -19,7 +21,15 @@ const increaseFunALot = () => {
   util.printToDom('funScore', fun);
 };
 
-const decreaseFun = () => {
+const decreaseFunALittle = () => {
+  fun -= 5;
+  if (fun < 0) {
+    fun = 0;
+  }
+  util.printToDom('funScore', fun);
+};
+
+const decreaseFunALot = () => {
   fun -= 25;
   if (fun < 0) {
     fun = 0;
@@ -27,21 +37,27 @@ const decreaseFun = () => {
   util.printToDom('funScore', fun);
 };
 
-const playButtonFunction = (e) => {
-  const playButtonId = e.target.id;
-  if (playButtonId === 'superFun') {
-    increaseFunALot();
-  } else {
-    increaseFunALittle();
-  }
+const superFunFunction = () => {
+  increaseFunALot();
+  full.decreaseFullALot();
+  energy.decreaseEnergyALot();
+  strength.increaseStrengthALittle();
+};
+
+const kindaFunFunction = () => {
+  increaseFunALittle();
+  full.decreaseFullALittle();
+  energy.decreaseEnergyALittle();
+  strength.increaseStrengthALittle();
 };
 
 const attachFunEvents = () => {
-  for (let i = 0; i < playButtons.length; i += 1) {
-    playButtons[i].addEventListener('click', playButtonFunction);
-  }
+  const superFunBtn = document.getElementById('superFun');
+  const kindaFunBtn = document.getElementById('kindaFun');
+  superFunBtn.addEventListener('click', superFunFunction);
+  kindaFunBtn.addEventListener('click', kindaFunFunction);
 };
 
 export default {
-  attachFunEvents, increaseFunALittle, increaseFunALot, decreaseFun,
+  attachFunEvents, increaseFunALittle, increaseFunALot, decreaseFunALittle, decreaseFunALot,
 };

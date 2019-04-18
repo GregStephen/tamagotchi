@@ -1,10 +1,11 @@
 import util from './util';
 import full from './eatEventListeners';
+import fun from './funEventListeners';
+import energy from './sleepEventListeners';
 
-const fightButtons = document.getElementsByClassName('fightButtons');
 let strength = 100;
 
-const increaseStrength = () => {
+const increaseStrengthALittle = () => {
   strength += 1;
   if (strength > 100) {
     strength = 100;
@@ -12,7 +13,15 @@ const increaseStrength = () => {
   util.printToDom('strengthScore', strength);
 };
 
-const decreaseStrength = () => {
+const increaseStrengthALot = () => {
+  strength += 20;
+  if (strength > 100) {
+    strength = 100;
+  }
+  util.printToDom('strengthScore', strength);
+};
+
+const decreaseStrengthALittle = () => {
   strength -= 10;
   if (strength < 0) {
     strength = 0;
@@ -20,19 +29,39 @@ const decreaseStrength = () => {
   util.printToDom('strengthScore', strength);
 };
 
-const fightButtonFunction = (e) => {
-  const fightButtonId = e.target.id;
-  if (fightButtonId === 'runAway') {
-    increaseStrength();
-  } else {
-    decreaseStrength();
+const decreaseStrengthALot = () => {
+  strength -= 20;
+  if (strength < 0) {
+    strength = 0;
   }
+  util.printToDom('strengthScore', strength);
+};
+
+const runAwayFunction = () => {
+  increaseStrengthALittle();
+  full.decreaseFullALittle();
+  fun.increaseFunALittle();
+  energy.decreaseEnergyALittle();
+};
+
+const killThemFunction = () => {
+  decreaseStrengthALittle();
+  fun.decreaseFunALot();
+  full.decreaseFullALittle();
+  energy.decreaseEnergyALot();
 };
 
 const attachFightEvents = () => {
-  for (let i = 0; i < fightButtons.length; i += 1) {
-    fightButtons[i].addEventListener('click', fightButtonFunction);
-  }
+  const runAwayBtn = document.getElementById('runAway');
+  const killThemBtn = document.getElementById('killThem');
+  runAwayBtn.addEventListener('click', runAwayFunction);
+  killThemBtn.addEventListener('click', killThemFunction);
 };
 
-export default { attachFightEvents, increaseStrength, decreaseStrength };
+export default {
+  attachFightEvents,
+  increaseStrengthALittle,
+  decreaseStrengthALittle,
+  increaseStrengthALot,
+  decreaseStrengthALot,
+};

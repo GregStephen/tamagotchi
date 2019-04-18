@@ -1,6 +1,8 @@
 import util from './util';
+import full from './eatEventListeners';
+import fun from './funEventListeners';
+import strength from './fightEventListeners';
 
-const sleepButtons = document.getElementsByClassName('sleepButtons');
 let energy = 50;
 
 const increaseEnergyALittle = () => {
@@ -19,29 +21,47 @@ const increaseEnergyALot = () => {
   util.printToDom('energyScore', energy);
 };
 
-const decreaseEnergy = () => {
-  energy -= 25;
+const decreaseEnergyALittle = () => {
+  energy -= 15;
   if (energy < 0) {
     energy = 0;
   }
   util.printToDom('energyScore', energy);
 };
 
-const sleepButtonFunction = (e) => {
-  const sleepButtonId = e.target.id;
-  if (sleepButtonId === 'nap') {
-    increaseEnergyALittle();
-  } else {
-    increaseEnergyALot();
+const decreaseEnergyALot = () => {
+  energy -= 50;
+  if (energy < 0) {
+    energy = 0;
   }
+  util.printToDom('energyScore', energy);
+};
+
+const napFunction = () => {
+  increaseEnergyALittle();
+  full.decreaseFullALittle();
+  fun.increaseFunALittle();
+  strength.decreaseStrengthALittle();
+};
+
+const deepSleepFunction = () => {
+  increaseEnergyALot();
+  full.decreaseFullALot();
+  fun.increaseFunALittle();
+  strength.decreaseStrengthALot();
 };
 
 const attachSleepEvents = () => {
-  for (let i = 0; i < sleepButtons.length; i += 1) {
-    sleepButtons[i].addEventListener('click', sleepButtonFunction);
-  }
+  const napBtn = document.getElementById('nap');
+  const deepSleepBtn = document.getElementById('deepSleep');
+  napBtn.addEventListener('click', napFunction);
+  deepSleepBtn.addEventListener('click', deepSleepFunction);
 };
 
 export default {
-  attachSleepEvents, increaseEnergyALittle, increaseEnergyALot, decreaseEnergy,
+  attachSleepEvents,
+  increaseEnergyALittle,
+  increaseEnergyALot,
+  decreaseEnergyALittle,
+  decreaseEnergyALot,
 };
