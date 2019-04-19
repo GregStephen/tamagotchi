@@ -16,7 +16,8 @@ const domStringBuilder = () => {
 let strength = 100;
 
 const increaseStrengthALittle = () => {
-  strength += 1;
+  const increment = (util.getRandomNum(5) + 1);
+  strength += increment;
   if (strength > 100) {
     strength = 100;
   }
@@ -24,7 +25,8 @@ const increaseStrengthALittle = () => {
 };
 
 const increaseStrengthALot = () => {
-  strength += 20;
+  const increment = (util.getRandomNum(25) + 1);
+  strength += increment;
   if (strength > 100) {
     strength = 100;
   }
@@ -32,7 +34,8 @@ const increaseStrengthALot = () => {
 };
 
 const decreaseStrengthALittle = () => {
-  strength -= 10;
+  const decrement = (util.getRandomNum(5) + 1);
+  strength -= decrement;
   if (strength < 0) {
     strength = 0;
   }
@@ -40,7 +43,8 @@ const decreaseStrengthALittle = () => {
 };
 
 const decreaseStrengthALot = () => {
-  strength -= 20;
+  const decrement = (util.getRandomNum(25) + 1);
+  strength -= decrement;
   if (strength < 0) {
     strength = 0;
   }
