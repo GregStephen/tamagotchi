@@ -15,7 +15,8 @@ const domStringBuilder = () => {
 let full = 100;
 
 const increaseFullALittle = () => {
-  full += 10;
+  const increment = (util.getRandomNum(10) + 1);
+  full += increment;
   if (full > 100) {
     full = 100;
   }
@@ -23,7 +24,8 @@ const increaseFullALittle = () => {
 };
 
 const increaseFullALot = () => {
-  full += 25;
+  const increment = (util.getRandomNum(25) + 1);
+  full += increment;
   if (full > 100) {
     full = 100;
   }
@@ -31,7 +33,8 @@ const increaseFullALot = () => {
 };
 
 const decreaseFullALittle = () => {
-  full -= 3;
+  const decrement = (util.getRandomNum(5) + 1);
+  full -= decrement;
   if (full < 0) {
     full = 0;
   }
@@ -39,7 +42,8 @@ const decreaseFullALittle = () => {
 };
 
 const decreaseFullALot = () => {
-  full -= 15;
+  const decrement = (util.getRandomNum(25) + 1);
+  full -= decrement;
   if (full < 0) {
     full = 0;
   }

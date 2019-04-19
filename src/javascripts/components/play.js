@@ -17,7 +17,8 @@ const domStringBuilder = () => {
 let fun = 50;
 
 const increaseFunALittle = () => {
-  fun += 2;
+  const increment = (util.getRandomNum(10) + 1);
+  fun += increment;
   if (fun > 100) {
     fun = 100;
   }
@@ -25,7 +26,8 @@ const increaseFunALittle = () => {
 };
 
 const increaseFunALot = () => {
-  fun += 50;
+  const increment = (util.getRandomNum(50) + 1);
+  fun += increment;
   if (fun > 100) {
     fun = 100;
   }
@@ -33,7 +35,8 @@ const increaseFunALot = () => {
 };
 
 const decreaseFunALittle = () => {
-  fun -= 5;
+  const decrement = (util.getRandomNum(10) + 1);
+  fun -= decrement;
   if (fun < 0) {
     fun = 0;
   }
@@ -41,7 +44,8 @@ const decreaseFunALittle = () => {
 };
 
 const decreaseFunALot = () => {
-  fun -= 25;
+  const decrement = (util.getRandomNum(25) + 1);
+  fun -= decrement;
   if (fun < 0) {
     fun = 0;
   }

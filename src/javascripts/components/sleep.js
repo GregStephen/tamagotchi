@@ -16,7 +16,8 @@ const domStringBuilder = () => {
 let energy = 50;
 
 const increaseEnergyALittle = () => {
-  energy += 50;
+  const increment = (util.getRandomNum(10) + 1);
+  energy += increment;
   if (energy > 100) {
     energy = 100;
   }
@@ -24,7 +25,8 @@ const increaseEnergyALittle = () => {
 };
 
 const increaseEnergyALot = () => {
-  energy += 60;
+  const increment = (util.getRandomNum(60) + 1);
+  energy += increment;
   if (energy > 100) {
     energy = 100;
   }
@@ -32,7 +34,8 @@ const increaseEnergyALot = () => {
 };
 
 const decreaseEnergyALittle = () => {
-  energy -= 15;
+  const decrement = (util.getRandomNum(10) + 1);
+  energy -= decrement;
   if (energy < 0) {
     energy = 0;
   }
@@ -40,7 +43,8 @@ const decreaseEnergyALittle = () => {
 };
 
 const decreaseEnergyALot = () => {
-  energy -= 50;
+  const decrement = (util.getRandomNum(50) + 1);
+  energy -= decrement;
   if (energy < 0) {
     energy = 0;
   }
