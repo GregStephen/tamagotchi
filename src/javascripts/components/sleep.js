@@ -17,6 +17,8 @@ const domStringBuilder = () => {
 
 let energy = 50;
 
+const getEnergyValue = () => energy;
+
 const increaseEnergyALittle = () => {
   const increment = (util.getRandomNum(10) + 1);
   energy += increment;
@@ -59,4 +61,5 @@ export default {
   increaseEnergyALot,
   decreaseEnergyALittle,
   decreaseEnergyALot,
+  getEnergyValue,
 };

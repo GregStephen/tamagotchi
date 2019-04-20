@@ -1,8 +1,23 @@
 @import './colors';
 #app {
-  padding-top: 5em;
+  padding-top: 2em;
   padding-bottom: 5em;
   display: flex;
   flex-flow: wrap row;
   background-color: $background;
+}
+
+#progress {
+  font-size: 2em;
+  text-align: center;
+  width: 60%;
+  margin: auto;
+}
+
+#totalProgress {
+  padding-top: .5em;
+  padding-bottom: .5em;
+  font-family: 'Press Start 2P', cursive;
+  background-color: lightgray;
+  border: 5px solid black;
 }

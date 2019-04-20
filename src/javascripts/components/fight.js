@@ -17,6 +17,8 @@ const domStringBuilder = () => {
 
 let strength = 100;
 
+const getStrengthValue = () => strength;
+
 const increaseStrengthALittle = () => {
   const increment = (util.getRandomNum(5) + 1);
   strength += increment;
@@ -59,4 +61,5 @@ export default {
   increaseStrengthALot,
   decreaseStrengthALittle,
   decreaseStrengthALot,
+  getStrengthValue,
 };
