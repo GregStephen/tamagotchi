@@ -2,13 +2,24 @@ import full from '../components/eat';
 import fun from '../components/play';
 import energy from '../components/sleep';
 import strength from '../components/fight';
+import util from './util';
 
+const getProgressValue = () => {
+  const totalFull = full.getFullValue();
+  const totalFun = fun.getFunValue();
+  const totalEnergy = energy.getEnergyValue();
+  const totalStrength = strength.getStrengthValue();
+  const totalProgress = totalFull + totalFun + totalEnergy + totalStrength;
+  const domString = `<h3>${totalProgress}</h3>`;
+  util.printToDom('progress', domString);
+};
 
 const healthyFoodFunction = () => {
   full.increaseFullALot();
   strength.increaseStrengthALittle();
   fun.decreaseFunALittle();
   energy.increaseEnergyALittle();
+  getProgressValue();
 };
 
 const unhealthyFoodFunction = () => {
@@ -16,6 +27,7 @@ const unhealthyFoodFunction = () => {
   strength.decreaseStrengthALot();
   fun.increaseFunALittle();
   energy.decreaseEnergyALittle();
+  getProgressValue();
 };
 
 const superFunFunction = () => {
@@ -23,6 +35,7 @@ const superFunFunction = () => {
   full.decreaseFullALot();
   energy.decreaseEnergyALot();
   strength.increaseStrengthALittle();
+  getProgressValue();
 };
 
 const kindaFunFunction = () => {
@@ -30,6 +43,7 @@ const kindaFunFunction = () => {
   full.decreaseFullALittle();
   energy.decreaseEnergyALittle();
   strength.increaseStrengthALittle();
+  getProgressValue();
 };
 
 const napFunction = () => {
@@ -37,6 +51,7 @@ const napFunction = () => {
   full.decreaseFullALittle();
   fun.increaseFunALittle();
   strength.decreaseStrengthALittle();
+  getProgressValue();
 };
 
 const deepSleepFunction = () => {
@@ -44,6 +59,7 @@ const deepSleepFunction = () => {
   full.decreaseFullALot();
   fun.increaseFunALittle();
   strength.decreaseStrengthALot();
+  getProgressValue();
 };
 
 const runAwayFunction = () => {
@@ -51,6 +67,7 @@ const runAwayFunction = () => {
   full.decreaseFullALittle();
   fun.increaseFunALittle();
   energy.decreaseEnergyALittle();
+  getProgressValue();
 };
 
 const killThemFunction = () => {
@@ -58,6 +75,7 @@ const killThemFunction = () => {
   fun.decreaseFunALot();
   full.decreaseFullALittle();
   energy.decreaseEnergyALot();
+  getProgressValue();
 };
 
 const attachEvents = () => {
@@ -79,4 +97,4 @@ const attachEvents = () => {
   killThemBtn.addEventListener('click', killThemFunction);
 };
 
-export default { attachEvents };
+export default { attachEvents, getProgressValue };

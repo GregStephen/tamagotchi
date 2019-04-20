@@ -18,6 +18,8 @@ const domStringBuilder = () => {
 
 let fun = 50;
 
+const getFunValue = () => fun;
+
 const increaseFunALittle = () => {
   const increment = (util.getRandomNum(10) + 1);
   fun += increment;
@@ -61,4 +63,5 @@ export default {
   increaseFunALot,
   decreaseFunALittle,
   decreaseFunALot,
+  getFunValue,
 };

@@ -10,6 +10,7 @@ const createPage = () => {
   fight.domStringBuilder();
   sleep.domStringBuilder();
   buttons.attachEvents();
+  buttons.getProgressValue();
 };
 
 export default { createPage };

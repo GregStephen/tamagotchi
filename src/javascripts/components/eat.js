@@ -16,6 +16,8 @@ const domStringBuilder = () => {
 };
 let full = 100;
 
+const getFullValue = () => full;
+
 const increaseFullALittle = () => {
   const increment = (util.getRandomNum(10) + 1);
   full += increment;
@@ -58,4 +60,5 @@ export default {
   increaseFullALot,
   decreaseFullALittle,
   decreaseFullALot,
+  getFullValue,
 };
