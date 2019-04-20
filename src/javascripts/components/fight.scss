@@ -1,7 +1,59 @@
 @import '../../styles/colors';
+@import '../../styles/buttons';
 
 #fight {
-  width: 40%;
-  margin: 5%;
-  background-color: $fightBackground;
+  width: 45%;
+  margin-left: 4.5%;
+  margin-right: .5%;
+  margin-top: 1em;
+  height: 25em;
+  background-image: url($fightBackground);
+  background-size: cover;
+  text-align: center;
+  position: relative;
+  border-bottom-left-radius: 5%;
+
+  .headline {
+    text-decoration: underline;
+    color: black;
+    position: absolute;
+    font-size: 3.5em;
+    right: 1.3em;
+  }
+  .scoreDiv {
+    color: black;
+    font-size: 2em;
+    .valueLabel {
+      position: absolute;
+      top: 2.75em;
+      right: 1.25em;
+  
+    }
+    .score {
+      position: absolute;
+      top: 3em;
+      right: 1.75em;
+      margin-left: .8em;
+      display: inline;
+      font-size: 2em;
+      font-weight: bold;
+    }
+  }
+  button {
+    @extend .everyButton;
+  }
+  #runAway {
+    color: black;
+    border-color: black;
+    position: absolute;
+    bottom: 3em;
+    right: 4.5em;
+  }
+  #killThem {
+    border-color: black;
+    color: black;
+    position: absolute;
+    bottom: 0em;
+    right: 3em;
+  }
 }

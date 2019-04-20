@@ -1,8 +1,12 @@
 $background: cornflowerblue;
 
-//  quad background colors
+//  quad background images
 
-$eatBackground: lightyellow;
-$sleepBackground: lightgreen;
-$playBackground: orange;
-$fightBackground: rgb(247, 74, 74);
+$eatBackground: "https://i.pinimg.com/originals/76/89/c5/7689c5513084cd3ae199cec4f9b84af3.jpg";
+$sleepBackground: "https://previews.123rf.com/images/showcake/showcake1604/showcake160400270/54926850-pillow-on-the-bed-background.jpg";
+$playBackground: "https://img.freepik.com/free-photo/grassland-landscape-greening-environment-park-background_1112-1177.jpg?size=626&ext=jpg";
+$fightBackground: "https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/SfW2n0nUgiy2wxlnp/red-boxing-gloves-hanging-and-rotating-on-solid-background_szdhdgpue_thumbnail-full01.png";
+
+// quad color styles
+
+$sleepColor: cornflowerBlue;

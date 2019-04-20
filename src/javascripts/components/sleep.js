@@ -4,9 +4,11 @@ import './sleep.scss';
 const domStringBuilder = () => {
   let domString = '';
   domString += '<div>';
-  domString += '<h1>SLEEP</h1>';
-  domString += '<h3>ENERGY:</h3>';
-  domString += '<div id="energyScore">50</div>';
+  domString += '<h1 class="headline">SLEEP</h1>';
+  domString += '<div class="scoreDiv">';
+  domString += '<h3 class="valueLabel">ENERGY:</h3>';
+  domString += '<div class="score" id="energyScore">50</div>';
+  domString += '</div>';
   domString += '<button type="button" class="sleepButtons" id="nap">Nap</button>';
   domString += '<button type="button" class="sleepButtons" id="deepSleep">Hibernate</button>';
   domString += '</div>';

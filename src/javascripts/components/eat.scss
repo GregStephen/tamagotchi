@@ -1,7 +1,55 @@
 @import '../../styles/colors';
+@import '../../styles/buttons';
 
 #eat {
-  width: 40%;
-  margin: 5%;
-  background-color: $eatBackground;
+  width: 45%;
+  margin-left: 4.5%;
+  margin-right: .5%;
+  margin-top: 1em;
+  height: 25em;
+  border-top-left-radius: 5%;
+  background-image: url($eatBackground);
+  background-size: cover;
+  text-align: center;
+  position: relative;
+
+  .headline {
+    text-decoration: underline;
+    color: white;
+    position: absolute;
+    font-size: 3.75em;
+    right: 1em;
+  }
+  .scoreDiv {
+    color: white;
+    font-size: 2em;
+    .valueLabel {
+      position: absolute;
+      top: 4.75em;
+      left: 5em;
+  
+    }
+    .score {
+      position: absolute;
+      top: 3em;
+      right: .75em;
+      margin-left: .8em;
+      display: inline;
+      font-size: 2em;
+      font-weight: bold;
+    }
+  }
+  button {
+    @extend .everyButton;
+  }
+  #healthyFoodButton {
+    position: absolute;
+    bottom: 2em;
+    right: 2em;
+  }
+  #unhealthyFoodButton {
+    position: absolute;
+    bottom: 2em;
+    right: 12em;
+  }
 }
