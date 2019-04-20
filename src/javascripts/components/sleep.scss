@@ -1,7 +1,66 @@
 @import '../../styles/colors';
+@import '../../styles/buttons';
 
 #sleep {
-  width: 40%;
-  margin: 5%;
-  background-color: $sleepBackground;
+  width: 45%;
+  margin-left: .5%;
+  margin-right: 4.5%;
+  margin-top: 1em;
+  height: 25em;
+  background-image: url($sleepBackground);
+  background-size: cover;
+  text-align: center;
+  position: relative;
+  border-bottom-right-radius: 5%;
+  .headline {
+    display:block;
+    color: $sleepColor;
+    position: absolute;
+    font-size: 3.75em;
+    text-decoration: underline;
+    left: 1.25em;
+    top: 1em;
+    transform: rotate(-30deg); 
+    -webkit-transform: rotate(-30deg); 
+    -moz-transform: rotate(-30deg); 
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+  }
+
+  .scoreDiv {
+    color: $sleepColor;
+    font-size: 2em;
+
+    .valueLabel {
+      position: absolute;
+      top: .75em;
+      right: .75em;
+    }
+
+    .score {
+      position: absolute;
+      top: 2em;
+      right: 1.25em;
+      margin-left: .8em;
+      display: inline;
+      font-size: 2em;
+      font-weight: bold;
+    }
+  }
+  button {
+    @extend .everyButton;
+  }
+  #nap {
+    color: $sleepColor;
+    border-color: $sleepColor;
+    position: absolute;
+    bottom: 2em;
+    right: 5em;
+  }
+  #deepSleep {
+    color: $sleepColor;
+    border-color: $sleepColor;
+    position: absolute;
+    bottom: 2em;
+    right: 15em;
+  }
 }

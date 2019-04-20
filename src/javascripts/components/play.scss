@@ -1,7 +1,59 @@
 @import '../../styles/colors';
+@import '../../styles/buttons';
 
 #play {
-  width: 40%;
-  margin: 5%;
-  background-color: $playBackground;
+  width: 45%;
+  margin-left: .5%;
+  margin-right: 4.5%;
+  margin-top: 1em;
+  background-image: url($playBackground);
+  background-size: cover;
+  height: 25em;
+  border-top-right-radius: 5%;
+  text-align: center;
+  position: relative;
+  .headline {
+    text-decoration: underline;
+    color: black;
+    position: absolute;
+    font-size: 3.75em;
+    left: .75em;
+  }
+  .scoreDiv {
+    color: black;
+    font-size: 2em;
+
+    .valueLabel {
+      position: absolute;
+      top: 4.25em;
+      right: 4em;
+    }
+
+    .score {
+      position: absolute;
+      top: 2.75em;
+      right: .75em;
+      margin-left: .8em;
+      display: inline;
+      font-size: 2em;
+      font-weight: bold;
+    }
+  }
+  button {
+    @extend .everyButton;
+  }
+  #superFun {
+    color: black;
+    border-color: black;
+    position: absolute;
+    bottom: 5em;
+    right: 7em;
+  }
+  #kindaFun {
+    border-color: black;
+    color: black;
+    position: absolute;
+    bottom: 5em;
+    right: 0em;
+  }
 }
