@@ -10,7 +10,7 @@ const getProgressValue = () => {
   const totalEnergy = energy.getEnergyValue();
   const totalStrength = strength.getStrengthValue();
   const totalProgress = totalFull + totalFun + totalEnergy + totalStrength;
-  const domString = `<h3>${totalProgress}</h3>`;
+  const domString = `<h3 id="totalProgress">TOTAL SCORE: ${totalProgress}/400</h3>`;
   util.printToDom('progress', domString);
 };
 

@@ -14,13 +14,13 @@
   position: relative;
   .headline {
     text-decoration: underline;
-    color: black;
+    color: $playColor;
     position: absolute;
     font-size: 3.75em;
     left: .75em;
   }
   .scoreDiv {
-    color: black;
+    color: $playColor;
     font-size: 2em;
 
     .valueLabel {
@@ -43,15 +43,15 @@
     @extend .everyButton;
   }
   #superFun {
-    color: black;
-    border-color: black;
+    color: $playColor;
+    border-color: $playColor;
     position: absolute;
     bottom: 5em;
     right: 7em;
   }
   #kindaFun {
-    border-color: black;
-    color: black;
+    border-color: $playColor;
+    color: $playColor;
     position: absolute;
     bottom: 5em;
     right: 0em;
