@@ -1,4 +1,6 @@
 @import './colors';
+@import './buttons';
+
 #app {
   padding-top: 2em;
   padding-bottom: 5em;
@@ -20,4 +22,32 @@
   font-family: 'Press Start 2P', cursive;
   background-color: lightgray;
   border: 5px solid black;
+}
+
+.quad {
+  width: 45%;
+  height: 25em;
+}
+
+.dead {
+  border: 1em solid red;
+  width: 42%;
+  height: 23em;
+}
+
+.almostDead {
+  border: 1em solid yellow;
+  width: 42%;
+  height: 23em;
+}
+
+.allDead {
+  -webkit-filter: grayscale(1);
+  filter: grayscale(1);
+}
+
+#allDead {
+  button {
+    @extend .everyButton;
+  }
 }

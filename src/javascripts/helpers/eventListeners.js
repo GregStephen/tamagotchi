@@ -4,7 +4,22 @@ import energy from '../components/sleep';
 import strength from '../components/fight';
 import util from './util';
 
+const allDead = () => {
+  let domString = '';
+  domString += '<div id="allDead">';
+  domString += '<h1>YOU KILLED IT</h1>';
+  domString += '<button id="tryAgainButton" type="button">Try Again</button>';
+  util.printToDom('progress', domString);
+  reDo();
+};
+
+const reDo = () => {
+  const reDoButton = document.getElementById('tryAgainButton');
+  reDoButton.addEventListener('click', createPage.createPage());
+};
+
 const getProgressValue = () => {
+  const appDiv = document.getElementById('app');
   const totalFull = full.getFullValue();
   const totalFun = fun.getFunValue();
   const totalEnergy = energy.getEnergyValue();
@@ -12,6 +27,12 @@ const getProgressValue = () => {
   const totalProgress = totalFull + totalFun + totalEnergy + totalStrength;
   const domString = `<h3 id="totalProgress">TOTAL SCORE: ${totalProgress}/400</h3>`;
   util.printToDom('progress', domString);
+  if (totalProgress === 0) {
+    appDiv.classList.add('allDead');
+    allDead();
+  } else {
+    appDiv.classList.remove('allDead');
+  }
 };
 
 const healthyFoodFunction = () => {

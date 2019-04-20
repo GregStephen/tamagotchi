@@ -2,13 +2,11 @@
 @import '../../styles/buttons';
 
 #play {
-  width: 45%;
   margin-left: .5%;
   margin-right: 4.5%;
   margin-top: 1em;
   background-image: url($playBackground);
   background-size: cover;
-  height: 25em;
   border-top-right-radius: 5%;
   text-align: center;
   position: relative;
@@ -25,13 +23,13 @@
 
     .valueLabel {
       position: absolute;
-      top: 4.25em;
+      bottom: 3.5em;
       right: 4em;
     }
 
     .score {
       position: absolute;
-      top: 2.75em;
+      bottom: 2.35em;
       right: .75em;
       margin-left: .8em;
       display: inline;

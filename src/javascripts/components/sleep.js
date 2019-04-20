@@ -19,12 +19,30 @@ let energy = 50;
 
 const getEnergyValue = () => energy;
 
+const energyValueCheck = () => {
+  const sleepDiv = document.getElementById('sleep');
+  if (energy === 0) {
+    sleepDiv.classList.add('dead');
+    sleepDiv.classList.remove('quad');
+    sleepDiv.classList.remove('almostDead');
+  } else if (energy < 25 && energy > 0) {
+    sleepDiv.classList.add('almostDead');
+    sleepDiv.classList.remove('quad');
+    sleepDiv.classList.remove('dead');
+  } else {
+    sleepDiv.classList.remove('almostDead');
+    sleepDiv.classList.remove('dead');
+    sleepDiv.classList.add('quad');
+  }
+};
+
 const increaseEnergyALittle = () => {
   const increment = (util.getRandomNum(10) + 1);
   energy += increment;
   if (energy > 100) {
     energy = 100;
   }
+  energyValueCheck();
   util.printToDom('energyScore', energy);
 };
 
@@ -34,6 +52,7 @@ const increaseEnergyALot = () => {
   if (energy > 100) {
     energy = 100;
   }
+  energyValueCheck();
   util.printToDom('energyScore', energy);
 };
 
@@ -43,6 +62,7 @@ const decreaseEnergyALittle = () => {
   if (energy < 0) {
     energy = 0;
   }
+  energyValueCheck();
   util.printToDom('energyScore', energy);
 };
 
@@ -52,6 +72,7 @@ const decreaseEnergyALot = () => {
   if (energy < 0) {
     energy = 0;
   }
+  energyValueCheck();
   util.printToDom('energyScore', energy);
 };
 
