@@ -1,0 +1,58 @@
+@import '../../styles/buttons';
+
+@for $i from 0 through 100 {
+  .fill-#{$i}-full { 
+    width: 1% * $i; 
+    @if $i < 15 { 
+      background-color: red; 
+    } @else if $i < 35 {
+      background-color: yellow;
+    } @else {
+      background-color: green;
+    }    
+  }
+}
+
+#progressBar {
+  border: 3px solid black;
+  height: 4em;
+  display: flex;
+}
+
+#progress {
+  font-size: 2em;
+  text-align: center;
+  width: 60%;
+  margin: auto;
+}
+
+#totalProgress {
+  padding-top: .5em;
+  padding-bottom: .5em;
+  font-family: 'Press Start 2P', cursive;
+  background-color: lightgray;
+  border: 5px solid black;
+}
+
+.dead {
+  border: 1em solid red;
+  width: 42%;
+  height: 23em;
+}
+
+.almostDead {
+  border: 1em solid yellow;
+  width: 42%;
+  height: 23em;
+}
+
+.allDead {
+  -webkit-filter: grayscale(1);
+  filter: grayscale(1);
+}
+
+#allDead {
+  button {
+    @extend .everyButton;
+  }
+}

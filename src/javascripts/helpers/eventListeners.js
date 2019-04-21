@@ -3,19 +3,21 @@ import fun from '../components/play';
 import energy from '../components/sleep';
 import strength from '../components/fight';
 import util from './util';
+import '../components/progress.scss';
+
+const Redo = () => {
+  console.error('Need to fix cycle dependency error to run createPage!');
+};
 
 const allDead = () => {
   let domString = '';
   domString += '<div id="allDead">';
   domString += '<h1>YOU KILLED IT</h1>';
   domString += '<button id="tryAgainButton" type="button">Try Again</button>';
+  domString += '</div>';
   util.printToDom('progress', domString);
-  reDo();
-};
-
-const reDo = () => {
   const reDoButton = document.getElementById('tryAgainButton');
-  reDoButton.addEventListener('click', createPage.createPage());
+  reDoButton.addEventListener('click', Redo);
 };
 
 const getProgressValue = () => {
@@ -25,7 +27,12 @@ const getProgressValue = () => {
   const totalEnergy = energy.getEnergyValue();
   const totalStrength = strength.getStrengthValue();
   const totalProgress = totalFull + totalFun + totalEnergy + totalStrength;
-  const domString = `<h3 id="totalProgress">TOTAL SCORE: ${totalProgress}/400</h3>`;
+  const percentage = Math.round((totalProgress / 400) * 100);
+  let domString = '';
+  domString += `<h3 id="totalProgress">TOTAL SCORE: ${percentage}%</h3>`;
+  domString += '<div id="progressBar">';
+  domString += `<div class="fill-${percentage}-full"></div>`;
+  domString += '</div>';
   util.printToDom('progress', domString);
   if (totalProgress === 0) {
     appDiv.classList.add('allDead');
