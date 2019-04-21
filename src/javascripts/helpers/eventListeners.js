@@ -3,9 +3,13 @@ import fun from '../components/play';
 import energy from '../components/sleep';
 import strength from '../components/fight';
 import util from './util';
+import createPage from '../components/createPage';
 import '../components/progress.scss';
 
 const Redo = () => {
+  const appDiv = document.getElementById('app');
+  createPage.createPage();
+  appDiv.classList.remove('allDead');
   console.error('Need to fix cycle dependency error to run createPage!');
 };
 
