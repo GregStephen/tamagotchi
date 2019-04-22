@@ -1,22 +1,24 @@
 @import '../../styles/buttons';
+@import '../../styles/colors';
 
 @for $i from 0 through 100 {
   .fill-#{$i}-full { 
     width: 1% * $i; 
     @if $i < 15 { 
-      background-color: red; 
+      background-color: $danger; 
     } @else if $i < 35 {
-      background-color: yellow;
+      background-color: $sick;
     } @else {
-      background-color: green;
+      background-color: $healthy;
     }    
   }
 }
 
 #progressBar {
-  border: 3px solid black;
-  height: 4em;
+  border: 15px solid black;
+  height: 2em;
   display: flex;
+  background-color: lightgrey; 
 }
 
 #progress {
@@ -27,23 +29,17 @@
 }
 
 #totalProgress {
-  padding-top: .5em;
-  padding-bottom: .5em;
   font-family: 'Press Start 2P', cursive;
-  background-color: lightgray;
-  border: 5px solid black;
+  width: 100%;
+  margin-top: .5em;
 }
 
 .dead {
-  border: 1em solid red;
-  width: 42%;
-  height: 23em;
+  border: 1em solid $danger;
 }
 
 .almostDead {
-  border: 1em solid yellow;
-  width: 42%;
-  height: 23em;
+  border: 1em solid $sick;
 }
 
 .allDead {

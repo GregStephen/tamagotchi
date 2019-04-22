@@ -3,12 +3,10 @@ import fun from '../components/play';
 import energy from '../components/sleep';
 import strength from '../components/fight';
 import util from './util';
-import createPage from '../components/createPage';
 import '../components/progress.scss';
 
 const Redo = () => {
   const appDiv = document.getElementById('app');
-  createPage.createPage();
   appDiv.classList.remove('allDead');
   console.error('Need to fix cycle dependency error to run createPage!');
 };
@@ -33,9 +31,11 @@ const getProgressValue = () => {
   const totalProgress = totalFull + totalFun + totalEnergy + totalStrength;
   const percentage = Math.round((totalProgress / 400) * 100);
   let domString = '';
-  domString += `<h3 id="totalProgress">TOTAL SCORE: ${percentage}%</h3>`;
+
   domString += '<div id="progressBar">';
-  domString += `<div class="fill-${percentage}-full"></div>`;
+  domString += `<div class="fill-${percentage}-full">`;
+  domString += `<h3 id="totalProgress">${percentage}%</h3>`;
+  domString += '</div>';
   domString += '</div>';
   util.printToDom('progress', domString);
   if (totalProgress === 0) {
