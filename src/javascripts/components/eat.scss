@@ -2,11 +2,12 @@
 @import '../../styles/buttons';
 
 #eat {
-  width: 45%;
+  border: 1em solid $healthy;
+  width: 42%;
+  height: 23em;
   margin-left: 4.5%;
   margin-right: .5%;
   margin-top: 1em;
-  height: 25em;
   border-top-left-radius: 5%;
   background-image: url($eatBackground);
   background-size: cover;
@@ -26,7 +27,7 @@
     .valueLabel {
       position: absolute;
       top: 4.75em;
-      left: 5em;
+      left: 4.5em;
   
     }
     .score {

@@ -2,11 +2,12 @@
 @import '../../styles/buttons';
 
 #sleep {
-  width: 45%;
+  border: 1em solid $healthy;
+  width: 42%;
+  height: 23em;
   margin-left: .5%;
   margin-right: 4.5%;
   margin-top: 1em;
-  height: 25em;
   background-image: url($sleepBackground);
   background-size: cover;
   text-align: center;

@@ -14,9 +14,27 @@ const domStringBuilder = () => {
   domString += '</div>';
   util.printToDom('eat', domString);
 };
+
 let full = 100;
 
 const getFullValue = () => full;
+
+const fullValueCheck = () => {
+  const fullDiv = document.getElementById('eat');
+  if (full === 0) {
+    fullDiv.classList.add('dead');
+    fullDiv.classList.remove('quad');
+    fullDiv.classList.remove('almostDead');
+  } else if (full < 25 && full > 0) {
+    fullDiv.classList.add('almostDead');
+    fullDiv.classList.remove('quad');
+    fullDiv.classList.remove('dead');
+  } else {
+    fullDiv.classList.remove('almostDead');
+    fullDiv.classList.remove('dead');
+    fullDiv.classList.add('quad');
+  }
+};
 
 const increaseFullALittle = () => {
   const increment = (util.getRandomNum(10) + 1);
@@ -24,6 +42,7 @@ const increaseFullALittle = () => {
   if (full > 100) {
     full = 100;
   }
+  fullValueCheck();
   util.printToDom('fullScore', full);
 };
 
@@ -33,6 +52,7 @@ const increaseFullALot = () => {
   if (full > 100) {
     full = 100;
   }
+  fullValueCheck();
   util.printToDom('fullScore', full);
 };
 
@@ -42,6 +62,7 @@ const decreaseFullALittle = () => {
   if (full < 0) {
     full = 0;
   }
+  fullValueCheck();
   util.printToDom('fullScore', full);
 };
 
@@ -51,6 +72,7 @@ const decreaseFullALot = () => {
   if (full < 0) {
     full = 0;
   }
+  fullValueCheck();
   util.printToDom('fullScore', full);
 };
 

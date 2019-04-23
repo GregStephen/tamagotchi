@@ -20,12 +20,30 @@ let fun = 50;
 
 const getFunValue = () => fun;
 
+const funValueCheck = () => {
+  const funDiv = document.getElementById('play');
+  if (fun === 0) {
+    funDiv.classList.add('dead');
+    funDiv.classList.remove('quad');
+    funDiv.classList.remove('almostDead');
+  } else if (fun < 25 && fun > 0) {
+    funDiv.classList.add('almostDead');
+    funDiv.classList.remove('quad');
+    funDiv.classList.remove('dead');
+  } else {
+    funDiv.classList.remove('almostDead');
+    funDiv.classList.remove('dead');
+    funDiv.classList.add('quad');
+  }
+};
+
 const increaseFunALittle = () => {
   const increment = (util.getRandomNum(10) + 1);
   fun += increment;
   if (fun > 100) {
     fun = 100;
   }
+  funValueCheck();
   util.printToDom('funScore', fun);
 };
 
@@ -35,6 +53,7 @@ const increaseFunALot = () => {
   if (fun > 100) {
     fun = 100;
   }
+  funValueCheck();
   util.printToDom('funScore', fun);
 };
 
@@ -44,6 +63,7 @@ const decreaseFunALittle = () => {
   if (fun < 0) {
     fun = 0;
   }
+  funValueCheck();
   util.printToDom('funScore', fun);
 };
 
@@ -53,6 +73,7 @@ const decreaseFunALot = () => {
   if (fun < 0) {
     fun = 0;
   }
+  funValueCheck();
   util.printToDom('funScore', fun);
 };
 

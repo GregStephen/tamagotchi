@@ -19,12 +19,30 @@ let strength = 100;
 
 const getStrengthValue = () => strength;
 
+const strengthValueCheck = () => {
+  const strengthDiv = document.getElementById('fight');
+  if (strength === 0) {
+    strengthDiv.classList.add('dead');
+    strengthDiv.classList.remove('quad');
+    strengthDiv.classList.remove('almostDead');
+  } else if (strength < 25 && strength > 0) {
+    strengthDiv.classList.add('almostDead');
+    strengthDiv.classList.remove('quad');
+    strengthDiv.classList.remove('dead');
+  } else {
+    strengthDiv.classList.remove('almostDead');
+    strengthDiv.classList.remove('dead');
+    strengthDiv.classList.add('quad');
+  }
+};
+
 const increaseStrengthALittle = () => {
   const increment = (util.getRandomNum(5) + 1);
   strength += increment;
   if (strength > 100) {
     strength = 100;
   }
+  strengthValueCheck();
   util.printToDom('strengthScore', strength);
 };
 
@@ -34,6 +52,7 @@ const increaseStrengthALot = () => {
   if (strength > 100) {
     strength = 100;
   }
+  strengthValueCheck();
   util.printToDom('strengthScore', strength);
 };
 
@@ -43,6 +62,7 @@ const decreaseStrengthALittle = () => {
   if (strength < 0) {
     strength = 0;
   }
+  strengthValueCheck();
   util.printToDom('strengthScore', strength);
 };
 
@@ -52,6 +72,7 @@ const decreaseStrengthALot = () => {
   if (strength < 0) {
     strength = 0;
   }
+  strengthValueCheck();
   util.printToDom('strengthScore', strength);
 };
 

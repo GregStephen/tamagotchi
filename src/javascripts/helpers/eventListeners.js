@@ -3,15 +3,47 @@ import fun from '../components/play';
 import energy from '../components/sleep';
 import strength from '../components/fight';
 import util from './util';
+import '../components/progress.scss';
+
+const Redo = () => {
+  const appDiv = document.getElementById('app');
+  appDiv.classList.remove('allDead');
+  console.error('Need to fix cycle dependency error to run createPage!');
+};
+
+const allDead = () => {
+  let domString = '';
+  domString += '<div id="allDead">';
+  domString += '<h1>YOU KILLED IT</h1>';
+  domString += '<button id="tryAgainButton" type="button">Try Again</button>';
+  domString += '</div>';
+  util.printToDom('progress', domString);
+  const reDoButton = document.getElementById('tryAgainButton');
+  reDoButton.addEventListener('click', Redo);
+};
 
 const getProgressValue = () => {
+  const appDiv = document.getElementById('app');
   const totalFull = full.getFullValue();
   const totalFun = fun.getFunValue();
   const totalEnergy = energy.getEnergyValue();
   const totalStrength = strength.getStrengthValue();
   const totalProgress = totalFull + totalFun + totalEnergy + totalStrength;
-  const domString = `<h3 id="totalProgress">TOTAL SCORE: ${totalProgress}/400</h3>`;
+  const percentage = Math.round((totalProgress / 400) * 100);
+  let domString = '';
+
+  domString += '<div id="progressBar">';
+  domString += `<div class="fill-${percentage}-full">`;
+  domString += `<h3 id="totalProgress">${percentage}%</h3>`;
+  domString += '</div>';
+  domString += '</div>';
   util.printToDom('progress', domString);
+  if (totalProgress === 0) {
+    appDiv.classList.add('allDead');
+    allDead();
+  } else {
+    appDiv.classList.remove('allDead');
+  }
 };
 
 const healthyFoodFunction = () => {
