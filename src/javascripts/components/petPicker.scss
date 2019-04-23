@@ -1,0 +1,51 @@
+@import '../../styles/buttons';
+
+#pet {
+  font-family: 'Press Start 2P', cursive;
+  text-shadow: 5px 5px 4px lightslategray;
+  text-align: center;
+  width: 100%;
+  margin-top: 2em;
+}
+
+#petsDiv {
+  display: flex;
+  flex-flow: wrap row;
+  width: 100%;
+  justify-content: space-around;
+}
+
+#welcomeHeader {
+  margin-top: -1em;
+  font-size: 3em;
+  line-height: 1.5em;
+
+}
+
+.petCard {
+  text-align: center;
+  background-color: lightblue;
+  width: 25%;
+  height: 25em;
+  border: 5px solid black;
+  border-radius: 5%;
+  box-shadow: 3px 3px 10px lightslategrey;
+  .petImage {
+    height: 60%;
+    img {
+      width: 90%;
+    }
+  }
+  button {
+      @extend .everyButton;
+  }
+}
+
+#selectedPetDiv {
+  border: 5px solid black;
+  background-color: lightblue;
+  border-radius: 5%;
+  box-shadow: 3px 3px 10px lightslategrey;
+  width: 50%;
+  margin: auto;
+}
