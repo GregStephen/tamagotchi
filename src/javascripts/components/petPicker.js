@@ -1,19 +1,29 @@
 import util from '../helpers/util';
 import petsData from '../data/petsData';
-import createPage from './createPage';
 import './petPicker.scss';
+import eat from './eat';
+import play from './play';
+import fight from './fight';
+import sleep from './sleep';
 
 const playPage = document.getElementById('play');
 const eatPage = document.getElementById('eat');
 const fightPage = document.getElementById('fight');
 const sleepPage = document.getElementById('sleep');
+const progressPage = document.getElementById('progress');
 
 let pets = [];
 
+const createPage = () => {
+  eat.domStringBuilder();
+  play.domStringBuilder();
+  fight.domStringBuilder();
+  sleep.domStringBuilder();
+};
+
 const letsGetStarted = (e) => {
   const petDiv = e.target.parentElement.previousElementSibling.children;
-  console.error(petDiv[0].src);
-  createPage.createPage();
+  progressPage.style.display = 'block';
   playPage.style.display = 'block';
   eatPage.style.display = 'block';
   fightPage.style.display = 'block';
@@ -64,10 +74,12 @@ const initializePets = () => {
       pets = petResults;
       domStringBuilder();
     }).catch(err => console.error(err));
+  createPage();
   playPage.style.display = 'none';
   eatPage.style.display = 'none';
   fightPage.style.display = 'none';
   sleepPage.style.display = 'none';
+  progressPage.style.display = 'none';
 };
 
 

@@ -42,12 +42,22 @@
   border: 1em solid $sick;
 }
 
+.healthy {
+  border: 1em solid $healthy;
+}
+
 .allDead {
   -webkit-filter: grayscale(1);
   filter: grayscale(1);
 }
 
 #allDead {
+  position: relative;
+  top: 16em;
+  background-color: lightslategray;
+  z-index: 1;
+  border: 5px solid black;
+  box-shadow: 10px 10px 10px black;
   button {
     @extend .everyButton;
   }

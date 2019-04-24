@@ -3,23 +3,31 @@ import fun from '../components/play';
 import energy from '../components/sleep';
 import strength from '../components/fight';
 import util from './util';
+// import petPicker from '../components/petPicker';
 import '../components/progress.scss';
 
-const Redo = () => {
-  const appDiv = document.getElementById('app');
-  appDiv.classList.remove('allDead');
-  console.error('Need to fix cycle dependency error to run createPage!');
-};
+
+// const Redo = () => {
+//   const appDiv = document.getElementById('app');
+//   console.error(appDiv.classList.includes('allDead'));
+//   appDiv.classList.remove('allDead');
+//   appDiv.classList.add('poop');
+//   petPicker.initializePets();
+//   attachEvents();
+//   getProgressValue();
+// };
 
 const allDead = () => {
   let domString = '';
   domString += '<div id="allDead">';
   domString += '<h1>YOU KILLED IT</h1>';
-  domString += '<button id="tryAgainButton" type="button">Try Again</button>';
+  domString += '<h4>A poor defenseless animal that loved you</h4>';
+  domString += '<h4>You should just refresh the page and pretend this never happened</h4>';
+  // domString += '<button id="tryAgainButton" type="button">Try Again</button>';
   domString += '</div>';
   util.printToDom('progress', domString);
-  const reDoButton = document.getElementById('tryAgainButton');
-  reDoButton.addEventListener('click', Redo);
+  // const reDoButton = document.getElementById('tryAgainButton');
+  // reDoButton.addEventListener('click', Redo);
 };
 
 const getProgressValue = () => {

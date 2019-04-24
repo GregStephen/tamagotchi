@@ -2,7 +2,6 @@
 @import '../../styles/buttons';
 
 #play {
-  border: 1em solid $healthy;
   width: 42%;
   height: 23em;
   margin-left: .5%;
@@ -57,4 +56,8 @@
     bottom: 5em;
     right: 0em;
   }
+}
+
+.quad {
+  border: 1em solid $healthy;
 }
