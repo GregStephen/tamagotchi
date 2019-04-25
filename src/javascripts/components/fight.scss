@@ -1,63 +1,21 @@
 @import '../../styles/colors';
 @import '../../styles/buttons';
+@import '../../styles/mediaQueries';
+
 
 #fight {
-  width: 42%;
-  height: 23em;
-  margin-left: 4.5%;
-  margin-right: .5%;
-  margin-top: 1em;
-  background-image: url($fightBackground);
-  background-size: cover;
-  text-align: center;
-  position: relative;
-  border-bottom-left-radius: 5%;
-
-  .headline {
-    text-decoration: underline;
-    color: black;
-    position: absolute;
-    font-size: 3.5em;
-    right: 1em;
+ @include for-small-quad;
+  background-color: $fightBackground;
+  color: $playBackground;
+  @include for-tablet-portrait-up {
+    @include for-tpu-quad;
   }
-  .scoreDiv {
-    color: black;
-    font-size: 2em;
-    .valueLabel {
-      position: absolute;
-      top: 2.75em;
-      right: 1em;
-  
-    }
-    .score {
-      position: absolute;
-      top: 3em;
-      right: 1.5em;
-      margin-left: .8em;
-      display: inline;
-      font-size: 2em;
-      font-weight: bold;
-    }
+  @include for-tablet-landscape-up {
+    @include for-tlu-quad;
+    @include for-tlu-quad-left;
   }
-  button {
-    @extend .everyButton;
+  @include for-desktop-up {
+    @include for-desktop;
+    @include for-desktop-left;
   }
-  #runAway {
-    color: black;
-    border-color: black;
-    position: absolute;
-    bottom: 2.5em;
-    right: 4em;
-  }
-  #killThem {
-    border-color: black;
-    color: black;
-    position: absolute;
-    bottom: 0em;
-    right: 2.5em;
-  }
-}
-
-.quad {
-  border: 1em solid $healthy;
 }

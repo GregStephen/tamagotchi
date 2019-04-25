@@ -1,58 +1,21 @@
 @import '../../styles/colors';
 @import '../../styles/buttons';
+@import '../../styles/mediaQueries';
 
 #eat {
-  width: 42%;
-  height: 23em;
-  margin-left: 4.5%;
-  margin-right: .5%;
-  margin-top: 1em;
-  border-top-left-radius: 5%;
-  background-image: url($eatBackground);
-  background-size: cover;
-  text-align: center;
-  position: relative;
-  .headline {
-    text-decoration: underline;
-    color: white;
-    position: absolute;
-    font-size: 3.75em;
-    right: 1em;
-  }
-  .scoreDiv {
-    color: white;
-    font-size: 2em;
-    .valueLabel {
-      position: absolute;
-      top: 4.75em;
-      left: 4.5em;
+  @include for-small-quad;
+  background-color: $eatBackground;
+  color: $sleepColor;
   
-    }
-    .score {
-      position: absolute;
-      top: 3em;
-      right: .75em;
-      margin-left: .8em;
-      display: inline;
-      font-size: 2em;
-      font-weight: bold;
-    }
+  @include for-tablet-portrait-up {
+    @include for-tpu-quad;
   }
-  button {
-    @extend .everyButton;
+  @include for-tablet-landscape-up {
+    @include for-tlu-quad;
+    @include for-tlu-quad-left;
   }
-  #healthyFoodButton {
-    position: absolute;
-    bottom: 2em;
-    right: 2em;
+  @include for-desktop-up {
+    @include for-desktop;
+    @include for-desktop-left;
   }
-  #unhealthyFoodButton {
-    position: absolute;
-    bottom: 2em;
-    right: 12em;
-  }
-}
-
-.quad {
-  border: 1em solid $healthy;
 }

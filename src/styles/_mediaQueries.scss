@@ -1,0 +1,165 @@
+@mixin for-tablet-portrait-up {
+  @media (min-width: 600px) { @content; }
+}
+@mixin for-tablet-landscape-up {
+  @media (min-width: 900px) { @content; }
+}
+@mixin for-desktop-up {
+  @media (min-width: 1200px) { @content; }
+}
+@mixin for-big-desktop-up {
+  @media (min-width: 1800px) { @content; }
+}
+
+@mixin for-small-quad {
+  width: 90%;
+  margin: auto;
+  margin-top: 1em;
+  text-align: center;
+  display: flex;
+  flex-flow: wrap row;
+  justify-content: flex-start;
+  .headline {
+    text-decoration: underline;
+    font-size: 2.75em;
+  }
+  .scoreDiv {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-flow: wrap row;
+    .valueLabel {
+      font-size: 1.5em;
+    }
+    .score {
+      font-size: 2em;
+      font-weight: bold;
+    }
+  }
+  .buttonHolder {
+    display: flex;
+    flex-flow: wrap row;
+    justify-content: space-around;
+    button {
+    @extend .everyButton;
+    margin: .5em;
+    margin-top: 1em;
+    }
+  }
+}
+
+
+@mixin for-tpu-quad {
+  width: 75%;
+  margin: auto;
+  margin-top: 1em;
+  .scoreDiv {
+    .valueLabel {
+      margin: 0;
+    }
+    .score {
+      margin: 0;
+    }
+  }
+  .buttonHolder {
+    button {
+      font-size: 1em;
+    }
+  }
+}
+
+
+
+@mixin for-tlu-quad {
+  max-width: 46%;
+  margin-top: 0;
+  height: 16.5em;
+  display: flex;
+  flex-flow: wrap column;
+  .top-half {
+    height: 45%;
+    display: flex;
+    flex-flow: wrap column;
+    justify-content: space-around;
+    .headline {
+      font-size: 1.75em;
+    }
+    .scoreDiv {
+      flex-flow: wrap column;
+      .valueLabel {
+          font-size: 1.75em;
+      }
+      .score {
+        font-size: 2.25em;
+        font-weight: bold;
+      }
+    }
+  } 
+  .buttonHolder {
+    height: 55%;
+    flex-flow: wrap column;
+    align-content: space-around;
+    button {
+      max-width: 70%;
+    }
+  }
+}
+
+@mixin for-tlu-quad-left {
+  margin-left: 2%;
+  margin-right: 0;
+}
+
+@mixin for-tlu-quad-right {
+  margin-right: 2%;
+  margin-left: 0;
+}
+
+
+
+@mixin for-desktop {
+  max-width:46%;
+  height: 15em;
+  .top-half {
+    height: 6.5em;
+    display: flex;
+    flex-flow: wrap row;
+    justify-content: space-around;
+    align-content: baseline;
+    .headline {
+      font-size: 2.25em;
+    }
+    .scoreDiv {
+      flex-flow: wrap column;
+      .valueLabel {
+          font-size: 1.75em;
+      }
+      .score {
+        font-size: 2.25em;
+        font-weight: bold;
+      }
+    }
+  }
+  .buttonHolder {
+    flex-grow: 2;
+    height: 8.5em;
+    flex-flow: wrap column;
+    align-content: space-around;
+    justify-content: space-around;
+    button {
+      max-width: 70%;
+    }
+  }
+}
+
+@mixin for-desktop-left {
+  .headline {
+    color: blue;
+  }
+}
+
+@mixin for-desktop-right {
+  .headline {
+    color: red;
+  }
+}

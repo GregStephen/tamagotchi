@@ -1,5 +1,6 @@
 @import '../../styles/buttons';
 @import '../../styles/colors';
+@import '../../styles//mediaQueries';
 
 @for $i from 0 through 100 {
   .fill-#{$i}-full { 
@@ -15,35 +16,46 @@
 }
 
 #progressBar {
+  width: 90%;
   border: 15px solid black;
   height: 2em;
+  margin: auto;
   display: flex;
   background-color: lightgrey; 
+  @include for-tablet-portrait-up {
+    width: 75%;
+  }
+  @include for-tablet-landscape-up {
+    width: 60%;
+    margin-bottom: .5em;
+  }
 }
 
 #progress {
   font-size: 2em;
   text-align: center;
-  width: 60%;
+  width: 100%;
   margin: auto;
 }
 
 #totalProgress {
-  font-family: 'Press Start 2P', cursive;
   width: 100%;
   margin-top: .5em;
 }
 
 .dead {
-  border: 1em solid $danger;
+  border: .5em solid $danger;
+  box-shadow: 8px 15px 10px rgb(253, 111, 96);
 }
 
 .almostDead {
-  border: 1em solid $sick;
+  border: .5em solid $sick;
+  box-shadow: 8px 15px 10px rgb(255, 255, 146);
 }
 
-.healthy {
-  border: 1em solid $healthy;
+.quad {
+  border: .5em solid $healthy;
+  box-shadow: 8px 15px 10px rgb(133, 223, 133);
 }
 
 .allDead {
@@ -52,13 +64,24 @@
 }
 
 #allDead {
-  position: relative;
-  top: 16em;
+  font-size: .5em;
+  position: absolute;
+  margin: auto;
+  top: 2em;
+  left: 2em;
   background-color: lightslategray;
-  z-index: 1;
+  z-index: 10;
   border: 5px solid black;
   box-shadow: 10px 10px 10px black;
-  button {
-    @extend .everyButton;
+  @include for-tablet-portrait-up {
+    padding: 1em;
+    font-size: .75em;
+    width: 75%;
+  }
+  @include for-tablet-landscape-up {
+    font-size: 1em;
+  }
+  @include for-desktop-up {
+    left: 3em;
   }
 }
