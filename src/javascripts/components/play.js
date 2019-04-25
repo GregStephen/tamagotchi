@@ -6,11 +6,13 @@ const domStringBuilder = () => {
   domString += '<div>';
   domString += '<h1 class="headline">PLAY</h1>';
   domString += '<div class="scoreDiv">';
-  domString += '<h3 class="valueLabel">FUN:</h3>';
-  domString += '<div class="score" id="funScore">50</div>';
+  domString += '<p class="valueLabel">FUN:</p>';
+  domString += '<p class="score" id="funScore">50</p>';
   domString += '</div>';
+  domString += '<div class="buttonHolder">';
   domString += '<button type="button" class="playButtons" id="superFun">Go To A Park</button>';
   domString += '<button type="button" class="playButtons" id="kindaFun">High Five</button>';
+  domString += '</div>';
   domString += '</div>';
   util.printToDom('play', domString);
 };

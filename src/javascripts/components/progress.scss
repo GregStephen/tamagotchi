@@ -1,5 +1,6 @@
 @import '../../styles/buttons';
 @import '../../styles/colors';
+@import '../../styles//mediaQueries';
 
 @for $i from 0 through 100 {
   .fill-#{$i}-full { 
@@ -15,21 +16,28 @@
 }
 
 #progressBar {
+  width: 90%;
   border: 15px solid black;
   height: 2em;
+  margin: auto;
   display: flex;
   background-color: lightgrey; 
+  @include for-tablet-portrait-up {
+    width: 75%;
+  }
+  @include for-tablet-landscape-up {
+    width: 60%;
+  }
 }
 
 #progress {
   font-size: 2em;
   text-align: center;
-  width: 60%;
+  width: 100%;
   margin: auto;
 }
 
 #totalProgress {
-  font-family: 'Press Start 2P', cursive;
   width: 100%;
   margin-top: .5em;
 }
@@ -52,13 +60,21 @@
 }
 
 #allDead {
+  font-size: .5em;
   position: relative;
-  top: 16em;
+  margin: auto;
+  top: 1;
   background-color: lightslategray;
   z-index: 1;
   border: 5px solid black;
   box-shadow: 10px 10px 10px black;
-  button {
-    @extend .everyButton;
+  @include for-tablet-portrait-up {
+    padding: 1em;
+    font-size: .75em;
+    width: 75%;
+  }
+  @include for-tablet-landscape-up {
+    font-size: 1em;
+    
   }
 }
