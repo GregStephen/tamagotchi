@@ -14,5 +14,6 @@ body {
   font-family: 'Press Start 2P', cursive;
   @include for-tablet-portrait-up {
     flex-flow: wrap row;
+    align-content: flex-start;
   }
 }

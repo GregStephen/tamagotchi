@@ -31,7 +31,9 @@ const letsGetStarted = (e) => {
   const yourPetBuilder = () => {
     let domString = '';
     domString += '<div id="selectedPetDiv">';
+    domString += '<div id="happyPet">';
     domString += '<h4>Here is your happy pet!</h4>';
+    domString += '</div>';
     domString += `<img src="${petDiv[0].src}">`;
     domString += '</div>';
     util.printToDom('pet', domString);

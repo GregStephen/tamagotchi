@@ -27,6 +27,7 @@
   }
   @include for-tablet-landscape-up {
     width: 60%;
+    margin-bottom: .5em;
   }
 }
 
@@ -43,15 +44,18 @@
 }
 
 .dead {
-  border: 1em solid $danger;
+  border: .5em solid $danger;
+  box-shadow: 8px 15px 10px rgb(253, 111, 96);
 }
 
 .almostDead {
-  border: 1em solid $sick;
+  border: .5em solid $sick;
+  box-shadow: 8px 15px 10px rgb(255, 255, 146);
 }
 
-.healthy {
-  border: 1em solid $healthy;
+.quad {
+  border: .5em solid $healthy;
+  box-shadow: 8px 15px 10px rgb(133, 223, 133);
 }
 
 .allDead {
@@ -61,11 +65,12 @@
 
 #allDead {
   font-size: .5em;
-  position: relative;
+  position: absolute;
   margin: auto;
-  top: 1;
+  top: 2em;
+  left: 2em;
   background-color: lightslategray;
-  z-index: 1;
+  z-index: 10;
   border: 5px solid black;
   box-shadow: 10px 10px 10px black;
   @include for-tablet-portrait-up {
@@ -75,6 +80,8 @@
   }
   @include for-tablet-landscape-up {
     font-size: 1em;
-    
+  }
+  @include for-desktop-up {
+    left: 3em;
   }
 }

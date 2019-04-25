@@ -4,10 +4,12 @@ import './fight.scss';
 const domStringBuilder = () => {
   let domString = '';
   domString += '<div>';
+  domString += '<div class="top-half">';
   domString += '<h1 class="headline">FIGHT</h1>';
   domString += '<div class="scoreDiv">';
   domString += '<p class="valueLabel">STRENGTH:</p>';
   domString += '<p class="score" id="strengthScore">100</p>';
+  domString += '</div>';
   domString += '</div>';
   domString += '<div class="buttonHolder">';
   domString += '<button type="button" class="fightButtons" id="runAway">Run Away!</button>';

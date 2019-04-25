@@ -26,6 +26,10 @@ const allDead = () => {
   // domString += '<button id="tryAgainButton" type="button">Try Again</button>';
   domString += '</div>';
   util.printToDom('progress', domString);
+  let deadDom = '';
+  deadDom += '<h4>Here is your dead pet!</h4>';
+  deadDom += '<h2>RIP</h2>';
+  util.printToDom('happyPet', deadDom);
   // const reDoButton = document.getElementById('tryAgainButton');
   // reDoButton.addEventListener('click', Redo);
 };

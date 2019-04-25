@@ -4,10 +4,12 @@ import './play.scss';
 const domStringBuilder = () => {
   let domString = '';
   domString += '<div>';
+  domString += '<div class="top-half">';
   domString += '<h1 class="headline">PLAY</h1>';
   domString += '<div class="scoreDiv">';
   domString += '<p class="valueLabel">FUN:</p>';
   domString += '<p class="score" id="funScore">50</p>';
+  domString += '</div>';
   domString += '</div>';
   domString += '<div class="buttonHolder">';
   domString += '<button type="button" class="playButtons" id="superFun">Go To A Park</button>';

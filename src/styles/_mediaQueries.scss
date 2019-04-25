@@ -48,10 +48,19 @@
   }
 }
 
+
 @mixin for-tpu-quad {
   width: 75%;
   margin: auto;
   margin-top: 1em;
+  .scoreDiv {
+    .valueLabel {
+      margin: 0;
+    }
+    .score {
+      margin: 0;
+    }
+  }
   .buttonHolder {
     button {
       font-size: 1em;
@@ -59,44 +68,98 @@
   }
 }
 
-@mixin for-tlu-quad-left {
-  width: 40%;
-  height: 20em;
-  margin-left: 5%;
-  .headline {
-    font-size: 2em;
-  }
-  .scoreDiv {
-  .valueLabel {
-      flex-grow: 2;
-      font-size: 2em;
-  }
-    .score {
-      flex-grow: 1;
-      margin-left: .8em;
-      font-size: 2.5em;
-      font-weight: bold;
+
+
+@mixin for-tlu-quad {
+  max-width: 46%;
+  margin-top: 0;
+  height: 16.5em;
+  display: flex;
+  flex-flow: wrap column;
+  .top-half {
+    height: 45%;
+    display: flex;
+    flex-flow: wrap column;
+    justify-content: space-around;
+    .headline {
+      font-size: 1.75em;
+    }
+    .scoreDiv {
+      flex-flow: wrap column;
+      .valueLabel {
+          font-size: 1.75em;
+      }
+      .score {
+        font-size: 2.25em;
+        font-weight: bold;
+      }
+    }
+  } 
+  .buttonHolder {
+    height: 55%;
+    flex-flow: wrap column;
+    align-content: space-around;
+    button {
+      max-width: 70%;
     }
   }
 }
 
+@mixin for-tlu-quad-left {
+  margin-left: 2%;
+  margin-right: 0;
+}
+
 @mixin for-tlu-quad-right {
-  width: 40%;
-  height: 20em;
-  margin-right: 5%;
-  .headline {
-    font-size: 2em;
+  margin-right: 2%;
+  margin-left: 0;
+}
+
+
+
+@mixin for-desktop {
+  max-width:46%;
+  height: 15em;
+  .top-half {
+    height: 6.5em;
+    display: flex;
+    flex-flow: wrap row;
+    justify-content: space-around;
+    align-content: baseline;
+    .headline {
+      font-size: 2.25em;
+    }
+    .scoreDiv {
+      flex-flow: wrap column;
+      .valueLabel {
+          font-size: 1.75em;
+      }
+      .score {
+        font-size: 2.25em;
+        font-weight: bold;
+      }
+    }
   }
-  .scoreDiv {
-    .valueLabel {
-      flex-grow: 2;
-      font-size: 2em;
+  .buttonHolder {
+    flex-grow: 2;
+    height: 8.5em;
+    flex-flow: wrap column;
+    align-content: space-around;
+    justify-content: space-around;
+    button {
+      max-width: 70%;
     }
-    .score {
-      flex-grow: 1;
-      margin-left: .8em;
-      font-size: 2.5em;
-      font-weight: bold;
-    }
+  }
+}
+
+@mixin for-desktop-left {
+  .headline {
+    color: blue;
+  }
+}
+
+@mixin for-desktop-right {
+  .headline {
+    color: red;
   }
 }

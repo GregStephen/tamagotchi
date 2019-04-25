@@ -10,10 +10,11 @@
     @include for-tpu-quad;
   }
   @include for-tablet-landscape-up {
+    @include for-tlu-quad;
     @include for-tlu-quad-right;
   }
-}
-
-.quad {
-  border: 1em solid $healthy;
+  @include for-desktop-up {
+    @include for-desktop;
+    @include for-desktop-right;
+  }
 }

@@ -4,10 +4,12 @@ import './eat.scss';
 const domStringBuilder = () => {
   let domString = '';
   domString += '<div>';
+  domString += '<div class="top-half">';
   domString += '<h1 class="headline">EAT</h1>';
   domString += '<div class="scoreDiv">';
   domString += '<p class="valueLabel">FULLNESS:</p>';
   domString += '<p class="score" id="fullScore">100</p>';
+  domString += '</div>';
   domString += '</div>';
   domString += '<div class="buttonHolder">';
   domString += '<button type="button" class="eatButtons" id="healthyFoodButton">Healthy Food</button>';
