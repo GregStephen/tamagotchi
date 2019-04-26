@@ -62,6 +62,9 @@ const domStringBuilder = () => {
     domString += '<div class="buttonDiv">';
     domString += '<button class="petButton" type="button">Pick me!</button>';
     domString += '</div>';
+    domString += '<div class="petDescription">';
+    domString += `<p>${pet.description}</p>`;
+    domString += '</div>';
     domString += '</div>';
   });
   domString += '</div>';

@@ -16,6 +16,5 @@
   }
   @include for-desktop-up {
     @include for-desktop;
-    @include for-desktop-left;
   }
 }

@@ -38,12 +38,13 @@
   }
   .buttonHolder {
     display: flex;
-    flex-flow: wrap row;
+    flex-flow: wrap column;
     justify-content: space-around;
     button {
     @extend .everyButton;
-    margin: .5em;
-    margin-top: 1em;
+    width: 75%;
+    margin: auto;
+    margin-bottom: 1em;
     }
   }
 }
@@ -62,8 +63,10 @@
     }
   }
   .buttonHolder {
+    margin-top: 1em;
     button {
       font-size: 1em;
+      
     }
   }
 }
@@ -97,7 +100,6 @@
   } 
   .buttonHolder {
     height: 55%;
-    flex-flow: wrap column;
     align-content: space-around;
     button {
       max-width: 70%;
@@ -124,6 +126,7 @@
     height: 6.5em;
     display: flex;
     flex-flow: wrap row;
+    line-height: 2.75em;
     justify-content: space-around;
     align-content: baseline;
     .headline {
@@ -143,23 +146,13 @@
   .buttonHolder {
     flex-grow: 2;
     height: 8.5em;
+    margin-top: 0em;
     flex-flow: wrap column;
     align-content: space-around;
     justify-content: space-around;
     button {
       max-width: 70%;
+      font-size: 1.15em;
     }
-  }
-}
-
-@mixin for-desktop-left {
-  .headline {
-    color: blue;
-  }
-}
-
-@mixin for-desktop-right {
-  .headline {
-    color: red;
   }
 }

@@ -35,21 +35,21 @@
   width:90%;
   border: 10px solid black;
   box-shadow: 3px 3px 10px lightslategrey;
-  height: 20em;
+  height: 30em;
   margin-top: 1em;
   @include for-tablet-portrait-up {
     width: 40%;
-    height: 25em;
+    height: 30em;
   }
   @include for-tablet-landscape-up {
     width: 30%;
   }
   .petImage {
-    height: 50%;
+    height: 40%;
     @include for-tablet-portrait-up {
     }
     img {
-      height: 90%;
+      height: 100%;
     }
   }
   .buttonDiv {
@@ -57,6 +57,12 @@
   }
   button {
       @extend .everyButton;
+  }
+  .petDescription {
+    line-height: 1.25em;
+    text-shadow: 0 0 0 ;
+    padding-left: .25em;
+    padding-right: .25em;
   }
 }
 

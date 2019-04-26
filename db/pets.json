@@ -1,13 +1,16 @@
 {
   "pets": [{
       "name": "Fido",
-      "imageUrl": "https://thumbs.gfycat.com/PlaintiveSeparateBarebirdbat-small.gif"
-    },{
+      "imageUrl": "https://data.whicdn.com/images/124352933/original.gif",
+      "description": "A lil' fluff butt. He borks. A good boy."
+      },{
       "name": "Spot",
-      "imageUrl": "https://thumbs.gfycat.com/BowedVioletCats-max-1mb.gif"
+      "imageUrl": "https://thumbs.gfycat.com/BowedVioletCats-max-1mb.gif",
+      "description": "A mini-woofer. Surprisingly, has no spots."
     },{
       "name": "Larry",
-      "imageUrl": "https://data.whicdn.com/images/207000212/original.gif"
+      "imageUrl": "https://data.whicdn.com/images/207000212/original.gif",
+      "description": "He protecc. He attacc. But most importantly he snacc. Himbs CHONKY."
     }
   ]
 }
