@@ -1,16 +1,22 @@
 {
   "pets": [{
-      "name": "Fido",
-      "imageUrl": "https://data.whicdn.com/images/124352933/original.gif",
-      "description": "A lil' fluff butt. He borks. A good boy."
-      },{
       "name": "Spot",
       "imageUrl": "https://thumbs.gfycat.com/BowedVioletCats-max-1mb.gif",
+      "imageLocation": "../../assets/images/spot.gif",
+      "altText": "A lil cute brown cartoon pupper swimming in some water",
       "description": "A mini-woofer. Surprisingly, has no spots."
     },{
       "name": "Larry",
       "imageUrl": "https://data.whicdn.com/images/207000212/original.gif",
+      "imageLocation": "./assets/images/larry.gif",
+      "altText": "A big fat cartoon black cat with green eyes rolling around on its back",
       "description": "He protecc. He attacc. But most importantly he snacc. Himbs CHONKY."
+    },{
+      "name": "Hootie",
+      "imageUrl": "https://i.pinimg.com/originals/e6/09/d7/e609d7d3e6e2eed58419ed8477ba64db.gif",
+      "imageLocation": "../../assets/images/hootie.gif",
+      "altText": "A cartoon brown and purple owl floating and then flipping in the air.",
+      "description": "She a sweet girl. Loves to do tricks for love and snacks."
     }
   ]
 }
