@@ -5,7 +5,7 @@
 #eat {
   @include for-small-quad;
   background-color: $eatBackground;
-  color: $sleepColor;
+  color: $sleepBackground;
   
   @include for-tablet-portrait-up {
     @include for-tpu-quad;
@@ -16,6 +16,5 @@
   }
   @include for-desktop-up {
     @include for-desktop;
-    @include for-desktop-left;
   }
 }

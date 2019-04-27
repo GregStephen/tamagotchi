@@ -23,6 +23,7 @@ const createPage = () => {
 
 const letsGetStarted = (e) => {
   const petDiv = e.target.parentElement.previousElementSibling.children;
+  console.error(petDiv[0].alt, 'petDiv alt');
   progressPage.style.display = 'block';
   playPage.style.display = 'block';
   eatPage.style.display = 'block';
@@ -34,7 +35,7 @@ const letsGetStarted = (e) => {
     domString += '<div id="happyPet">';
     domString += '<h4>Here is your happy pet!</h4>';
     domString += '</div>';
-    domString += `<img src="${petDiv[0].src}">`;
+    domString += `<img src="${petDiv[0].src}" alt="${petDiv[0].alt}">`;
     domString += '</div>';
     util.printToDom('pet', domString);
   };
@@ -56,11 +57,14 @@ const domStringBuilder = () => {
   pets.forEach((pet) => {
     domString += '<div class="petCard">';
     domString += `<h1 class="petName">${pet.name}</h1>`;
-    domString += '<div class="petImage" >';
-    domString += `<img src=${pet.imageUrl}>`;
+    domString += '<div class="petImage">';
+    domString += `<img src="${pet.imageUrl}" alt="${pet.altText}">`;
     domString += '</div>';
     domString += '<div class="buttonDiv">';
     domString += '<button class="petButton" type="button">Pick me!</button>';
+    domString += '</div>';
+    domString += '<div class="petDescription">';
+    domString += `<p>${pet.description}</p>`;
     domString += '</div>';
     domString += '</div>';
   });
