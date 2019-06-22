@@ -23,7 +23,6 @@ const createPage = () => {
 
 const letsGetStarted = (e) => {
   const petDiv = e.target.parentElement.previousElementSibling.children;
-  console.error(petDiv[0].alt, 'petDiv alt');
   progressPage.style.display = 'block';
   playPage.style.display = 'block';
   eatPage.style.display = 'block';
